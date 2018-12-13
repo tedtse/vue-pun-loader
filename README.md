@@ -1,6 +1,6 @@
 ## VuePunLoader
 
-> 这是一个 `webpack loader`。根据相应规则自动生成 `.vue` 文件, 附带文件中的相应代码。例如 test.pun 的文件内容是:
+这是一个 `webpack loader`。根据相应规则自动生成 `.vue` 文件, 附带文件中的相应代码。例如 test.pun 的文件内容是:
 ```
 <template>
   <span @click="echo">this is test pun</span>
@@ -160,14 +160,22 @@ PunCode: {
 
 #### .pun 文件中的标签
 
-> template: 同 .vue 文件中的 template 标签。如果存在多个 template 标签, 只有最后一个生效。
+* template: 
 
-> script: 同 .vue 文件中的 script 标签。如果存在多个 script 标签, 只有最后一个生效。
+同 .vue 文件中的 template 标签。如果存在多个 template 标签, 只有最后一个生效。
 
-> style: 同 .vue 文件中的 style 标签。如果存在多个 script 标签, 多个标签同时生效;<br>
+* script: 
+
+同 .vue 文件中的 script 标签。如果存在多个 script 标签, 只有最后一个生效。
+
+* style: 
+
+同 .vue 文件中的 style 标签。如果存在多个 script 标签, 多个标签同时生效;<br>
 style 标签可以有 `alias` 属性, 用作该标签的别名。
 
-> component: 一个内置组件, 里面可包含 template、script、style, 各标签规则如上;<br>
+* component: 
+
+一个内置组件, 里面可包含 template、script、style, 各标签规则如上;<br>
 如果 .pun 文件中既有 component 标签, 又有 template、script、style, 只有 component 标签生效;<br>
 如果存在多个 component 标签, 多个标签同时生效;<br>
 component 标签可以有 `alias` 属性, 用作该标签的别名。
