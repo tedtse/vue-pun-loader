@@ -1,0 +1,14 @@
+<template alias="comp1">
+  <p>This is comp1</p>
+</template>
+<template alias="comp2">
+  <p>This is comp2</p>
+</template>
+
+<script>
+export default {
+  mounted () {
+    console.log(1)
+  }
+}
+</script>

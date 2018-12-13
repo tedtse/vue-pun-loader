@@ -1,0 +1,18 @@
+{
+  "name": "vue-pun-loader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^6.0.2",
+    "change-case": "^3.0.2",
+    "cheerio": "^1.0.0-rc.2",
+    "escodegen": "^1.11.0",
+    "loader-utils": "^1.1.0",
+    "prettier": "^1.14.3",
+    "schema-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "glob": "^7.1.3"
+  }
+}

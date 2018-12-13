@@ -1,0 +1,44 @@
+<script>
+import Vue from 'vue'
+const PunComponent0 = Vue.extend({
+  template: `<section>      <button @click="echo">click me</button>    </section>`,
+  methods: {
+    echo() {
+      console.log(2)
+    }
+  },
+  components: {}
+})
+const PunComponentTest = Vue.extend({
+  template: `<section>      <button @click="echo">click me</button>    </section>`,
+  methods: {
+    echo() {
+      console.log(2)
+    }
+  },
+  components: {}
+})
+export default {
+  data: function() {
+    return {
+      PunCode: {
+        '0': {
+          template:
+            '<section>\n      <button @click="echo">click me</button>\n    </section>',
+          script:
+            'export default {\n      methods: {\n        echo () {\n          console.log(2)\n        }\n      }\n    }',
+          style: ''
+        },
+        test: {
+          template:
+            '<section>\n      <button @click="echo">click me</button>\n    </section>',
+          script:
+            'export default {\n      methods: {\n        echo () {\n          console.log(2)\n        }\n      }\n    }',
+          style: ''
+        }
+      }
+    }
+  },
+  components: { PunComponent0, PunComponentTest }
+}
+</script>

@@ -1,0 +1,21 @@
+<script>
+import Vue from 'vue'
+const PunComponent = Vue.extend({ template: ``, components: {} })
+export default {
+  data: function() {
+    return {
+      PunCode: {
+        template: '',
+        script: '',
+        style: '.style-test {\n  background-color: #5a1c94;\n  color: #fff;\n}'
+      }
+    }
+  },
+  components: { PunComponent }
+}
+</script>            <style scoped>
+.style-test {
+  background-color: #5a1c94;
+  color: #fff;
+}
+</style>

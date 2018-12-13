@@ -1,0 +1,16 @@
+<component alias="test">
+  <template>
+    <section>
+      <button @click="echo">click me</button>
+    </section>
+  </template>
+  <script>
+    export default {
+      methods: {
+        echo () {
+          console.log(2)
+        }
+      }
+    }
+  </script>
+</component>

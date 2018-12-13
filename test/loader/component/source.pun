@@ -1,0 +1,40 @@
+<component>
+  <template>
+    <section>
+      <button @click="echo">click me</button>
+    </section>
+  </template>
+  <script>
+    export default {
+      methods: {
+        echo () {
+          console.log('click test')
+        }
+      }
+    }
+  </script>
+</component>
+
+<template>
+  <section>
+    <h3>This is pun-loader test</h3>
+    <p>Funds donated via Patreon go directly to support Evan You's full-time work on Vue.js.</p>
+    <button @click="echo">Click</button>
+  </section>
+</template>
+
+<script>
+export default {
+  methods: {
+    echo () {
+      console.log('Click event trigger')
+    }
+  }
+}
+</script>
+
+<style>
+  body {
+    margin: 0;
+  }
+</style>

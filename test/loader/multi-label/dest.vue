@@ -1,0 +1,22 @@
+<script>
+import Vue from 'vue'
+const PunComponent = Vue.extend({
+  template: `<p>This is comp2</p>`,
+  mounted: function() {
+    console.log(1)
+  },
+  components: {}
+})
+export default {
+  data: function() {
+    return {
+      PunCode: {
+        template: '<p>This is comp2</p>',
+        script: 'export default {\n  mounted () {\n    console.log(1)\n  }\n}',
+        style: ''
+      }
+    }
+  },
+  components: { PunComponent }
+}
+</script>
