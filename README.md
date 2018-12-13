@@ -48,7 +48,7 @@ export default {
 
 ### 名词解释
 
-* 内置组件
+* 内置组件
 
 解析文件中,
 ```
@@ -139,7 +139,7 @@ export default {
 </template>
 ```
 
-* data 选项中会自动添加一个代码属性
+* data 选项中会自动添加一个代码属性
 ```
 PunCode: {
   template: '<span @click="echo">this is test pun</span>',
@@ -153,9 +153,9 @@ PunCode: {
 
 * webpack 配置之 options
 
-| 配置项 | 数据类型 | 描述 | 默认值 |
+| 配置项 | 数据类型 | 描述 | 默认值 |
 | :------| :------| :------| :------|
-| punPrefix | String | pun 组件和 data 选项中 '${...}Code' 属性的前缀。<br>如果设成 'Vuepun' 则内置组件名为 'VuepunComponent', <br>代码属性为 'VuepunCode'。 | Pun |
+| punPrefix | String | pun 组件和 data 选项中 '${...}Code' 属性的前缀。<br>如果设成 'Vuepun' 则内置组件名为 'VuepunComponent', <br>代码属性为 'VuepunCode'。 | Pun |
 | debug | Boolean | 如果为真, 则会在 .pun 文件同级目录上生成一个同名的<br> .pun.compiler 文件。 | false |
 
 * .pun 文件中的标签
