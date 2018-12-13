@@ -48,7 +48,7 @@ export default {
 
 ### 名词解释
 
-* 内置组件
+#### 内置组件
 
 解析文件中,
 ```
@@ -60,7 +60,7 @@ export default {
 ```
 `PunComponent` 作为一个子组件内置在解析文件中, 我们约定它为内置组件
 
-* 代码属性
+#### 代码属性
 
 解析文件中,
 ```
@@ -80,7 +80,7 @@ export default {
 
 ### 用法
 
-* 安装
+#### 安装
 ```
   npm install vue-pun-loader --save-dev
 ```
@@ -89,7 +89,7 @@ export default {
   yarn add vue-pun-loader -D
 ```
 
-* webpack 配置
+#### webpack 配置
 ```
 module: {
   rules: [
@@ -117,7 +117,7 @@ module: {
 }
 ```
 
-* 在 script 标签中继承 pun 组件
+#### 在 script 标签中继承 pun 组件
 ```
 <script>
 import Pun from './test.pun'
@@ -130,7 +130,7 @@ export default {
 </script>
 ```
 
-* 在 template 标签中使用内置组件
+#### 在 template 标签中使用内置组件
 ```
 <template>
   <section>
@@ -139,7 +139,7 @@ export default {
 </template>
 ```
 
-* data 选项中会自动添加一个代码属性
+#### data 选项中会自动添加一个代码属性
 ```
 PunCode: {
   template: '<span @click="echo">this is test pun</span>',
@@ -151,14 +151,14 @@ PunCode: {
 
 ### 规则
 
-* webpack 配置之 options
+#### webpack 配置之 options
 
 | 配置项 | 数据类型 | 描述 | 默认值 |
 | :------| :------| :------| :------|
 | punPrefix | String | pun 组件和 data 选项中 '${...}Code' 属性的前缀。<br>如果设成 'Vuepun' 则内置组件名为 'VuepunComponent', <br>代码属性为 'VuepunCode'。 | Pun |
 | debug | Boolean | 如果为真, 则会在 .pun 文件同级目录上生成一个同名的<br> .pun.compiler 文件。 | false |
 
-* .pun 文件中的标签
+#### .pun 文件中的标签
 
 > template: 同 .vue 文件中的 template 标签。如果存在多个 template 标签, 只有最后一个生效。
 
@@ -172,7 +172,7 @@ style 标签可以有 `alias` 属性, 用作该标签的别名。
 如果存在多个 component 标签, 多个标签同时生效;<br>
 component 标签可以有 `alias` 属性, 用作该标签的别名。
 
-* alias 别名
+#### alias 别名
 
 alias 可用于 style、component 标签中。
 
