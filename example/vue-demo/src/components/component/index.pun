@@ -1,0 +1,21 @@
+<component alias="test">
+  <template>
+    <section>
+      <button @click="echo">click me</button>
+    </section>
+  </template>
+  <script>
+  export default {
+    data () {
+      return {
+        msg: 'hello'
+      }
+    },
+    methods: {
+      echo () {
+        console.log(this.msg)
+      }
+    }
+  }
+  </script>
+</component>

@@ -1,0 +1,17 @@
+<component>
+  <template>
+    <section>
+      <button @click="echo">click me</button>
+    </section>
+  </template>
+  <script>
+  const msg = 'hello'
+  export default {
+    methods: {
+      echo () {
+        console.log(msg)
+      }
+    }
+  }
+  </script>
+</component>

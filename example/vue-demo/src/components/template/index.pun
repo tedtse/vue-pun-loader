@@ -1,0 +1,25 @@
+<template>
+  <span @click="echo">this is test pun</span>
+</template>
+
+<script>
+export default {
+  methods: {
+    echo () {
+      console.log('click test')
+    }
+  }
+}
+</script>
+
+<style scoped>
+.style-test {
+  background-color: #5a1c94;
+  color: #fff;
+}
+</style>
+<style scoped>
+.style-test p {
+  cursor: pointer;
+}
+</style>
