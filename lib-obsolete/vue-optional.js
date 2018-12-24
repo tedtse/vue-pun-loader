@@ -8,7 +8,7 @@ const VUE_OPTIONAL_TYPES = {
   overwrite: ['name', 'model'],
   decorate: ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'activated', 'deactivated', 'beforeDestroy', 'destroyed', 'errorCaptured'],
   returnMerge: ['data'],
-  arrayUinique: ['mixins']
+  arrayUnique: ['mixins']
 }
 
 exports.optionalHandler = (key, values) => {
@@ -35,8 +35,8 @@ exports.optionalHandler = (key, values) => {
     case 'returnMerge':
       code += returnMergeHandler(key, values)
       break
-    case 'arrayUinique':
-      code += arrayUiniqueHandler(key, values)
+    case 'arrayUnique':
+      code += arrayUniqueHandler(key, values)
       break
   }
   return code
@@ -119,7 +119,7 @@ const returnMergeHandler = (key, values) => {
   return code
 }
 
-const arrayUiniqueHandler = (key, values) => {
+const arrayUniqueHandler = (key, values) => {
   let code = ''
   let eleNodes = []
   values.forEach(ast => {

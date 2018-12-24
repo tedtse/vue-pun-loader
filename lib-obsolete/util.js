@@ -70,5 +70,20 @@ module.exports = {
       }
     })
     return returnJson
+  },
+
+  isObjectNull (object) {
+    if (object === null || object === undefined) {
+      throw Error('Parameter is invalid! It must be an Object')
+    }
+    return Object.keys(object).length === 0
+  },
+
+  isComponentObject (object) {
+    return object.hasOwnProperty('template') && object.hasOwnProperty('script') && object.hasOwnProperty('style')
+  },
+
+  isLabelObject (object) {
+    return object.hasOwnProperty('attrs') && object.hasOwnProperty('code')
   }
 }

@@ -26,11 +26,6 @@
       }
     }
     </script>
-    <style scoped>
-      .pun-title {
-        color: #f00;
-      }
-    </style>
     <style>
       .pun-section {
         background-color: #000;

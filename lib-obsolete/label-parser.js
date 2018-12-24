@@ -1,45 +1,91 @@
 const cheerio = require('cheerio')
+const util = require('./util')
 
-exports.getTopElementContent = source => {
-  let $ = cheerio.load(source)
-  let template = getElementInfo($('template'))
-  let script = getElementInfo($('script'))
-  let style = getElementInfo($('style'))
-  return { template, script, style }
+exports.getComponentContent = source => {
+  const $ = cheerio.load(source)
+  // namespace
+  let namespace = getElementInfo($('namespace'), true).code
+  let component = getComponentInfo($('component'))
+  // 如果存在 component 标签, 则忽略掉 template script style 标签
+  if (Object.keys(component).length === 0) {
+    component = {
+      template: getElementInfo($('template'), true),
+      script: getElementInfo($('script'), true),
+      style: getElementInfo($('style'))
+    }
+  }
+  if (util.isComponentObject(component)
+    && util.isObjectNull(component.template)
+    && util.isObjectNull(component.script)
+    && util.isObjectNull(component.style)) {
+    component = {}
+  }
+  return { component, namespace }
 }
 
-const getElementInfo = $el => {
+const getComponentInfo = $component => {
+  let result = {}
+  let length = $component.length
+  if (length === 1) {
+    let attrs = $component.attr()
+    let alias = attrs.alias
+    if (alias) {
+      result[0] = {
+        template: getElementInfo($component.find('template'), true),
+        script: getElementInfo($component.find('script'), true),
+        style: getElementInfo($component.find('style'))
+      }
+      result[alias] = result[0]
+    } else {
+      result = {
+        template: getElementInfo($component.find('template'), true),
+        script: getElementInfo($component.find('script'), true),
+        style: getElementInfo($component.find('style'))
+      }
+    }
+  } else if (length > 1) {
+    for (let i = 0; i < length; i++) {
+      let $item = $component.eq(i)
+      let attrs = $item.attr()
+      let alias = attrs.alias
+      result[i] = {
+        template: getElementInfo($item.find('template'), true),
+        script: getElementInfo($item.find('script'), true),
+        style: getElementInfo($item.find('style'))
+      }
+      if (alias) {
+        result[alias] = result[i]
+      }
+    }
+  }
+  return result
+}
+
+const getElementInfo = ($el, ignorePrev = false) => {
   let result = {}
   let length = $el.length
   if (length === 1) {
     let attrs = $el.attr()
-    let id = attrs.id
-    result = {}
-    if (!isNaN(id)) {
-      throw Error('The attribute of id must not be a Number!')
-    }
-    result[0] = {
+    result = {
       code: $el.html().trim(),
       attrs
     }
-    if (id) {
-      result[id] = result[0]
-    }
   } else if (length > 1) {
-    result = {}
-    for (let i = 0; i < length; i++) {
-      let $item = $el.eq(i)
+    if (ignorePrev) {
+      let $item = $el.eq(length - 1)
       let attrs = $item.attr()
-      let id = attrs.id
-      if (!isNaN(id)) {
-        throw Error('The attribute of id must not be a Number!')
-      }
-      result[i] = {
+      result = {
         code: $item.html().trim(),
         attrs
       }
-      if (id) {
-        result[id] = result[i]
+    } else {
+      for (let i = 0; i < length; i++) {
+        let $item = $el.eq(i)
+        let attrs = $item.attr()
+        result[i] = {
+          code: $item.html().trim(),
+          attrs
+        }
       }
     }
   }

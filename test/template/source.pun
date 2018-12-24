@@ -8,7 +8,7 @@
   color: #fff;
 }
 </style>
-<style scoped>
+<style>
 .style-test p {
   cursor: pointer;
 }

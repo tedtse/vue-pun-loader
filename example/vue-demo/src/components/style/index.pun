@@ -1,6 +1,6 @@
 <style scoped>
 .style-test {
-  background-color: #5a1c94;
+  background-color: #5a1c93;
   color: #fff;
 }
 </style>

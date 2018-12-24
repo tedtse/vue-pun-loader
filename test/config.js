@@ -1,6 +1,6 @@
 module.exports = {
   format: {
-    parser: 'vue',
+    parser: 'babylon',
     semi: false,
     singleQuote: true
   }

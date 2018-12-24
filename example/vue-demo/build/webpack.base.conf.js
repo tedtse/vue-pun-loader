@@ -45,8 +45,7 @@ module.exports = {
         test: /\.pun$/,
         use: [
           {
-            loader: 'vue-loader',
-            options: vueLoaderConfig
+            loader: 'babel-loader'
           },
           {
             loader: path.resolve(__dirname, '../../../index'),

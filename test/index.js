@@ -4,26 +4,27 @@ const prettier = require('prettier')
 const glob = require('glob')
 
 const config = require('./config')
-const { getComponentContent } = require('../../lib/label-parser')
-const { generateVue } = require('../../lib/generate')
+const { getComponents } = require('../lib/selector')
+const { generateScript } = require('../lib/generate')
 
-glob('test/loader/**/*.pun', (err, files) => {
+glob('test/**/*.pun', (err, files) => {
   if (err) {
     throw err
   }
   files.forEach(file => {
-    // if (!file.includes('out-export')) {
-    //   return
-    // }
+    if (!file.includes('template')) {
+      return
+    }
     let _source = fs.readFileSync(file, 'utf8')
-    let component = getComponentContent(_source)
-    let source = generateVue(component, {
+    let { component } = getComponents(_source)
+    let source = generateScript(component, {
       punPrefix: 'Pun',
-      debug: false
-    })
+      debug: false,
+      moduleId: 'data-v-7ba5bd90'
+    }, path.resolve(__dirname, '../', file))
     let dirname = path.dirname(file)
     fs.writeFileSync(
-      path.resolve(`${dirname}/dest.vue`),
+      path.resolve(`${dirname}/dest.js`),
       prettier.format(source, config.format),
       'utf8'
     )

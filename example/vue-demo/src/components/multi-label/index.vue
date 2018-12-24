@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Pun from './index.pun'
+import Pun from './test.pun'
 
 export default {
   name: 'MultiLabel',

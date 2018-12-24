@@ -25,7 +25,7 @@ export default {
   },
   data: function() {
     return {
-      PunCode: {
+      punCode: {
         '0': {
           template: '<h3 class="pun-title">This is pun-loader test 1</h3>',
           script: '',
@@ -49,11 +49,13 @@ export default {
   },
   components: { PunComponent0, PunComponent1, PunComponentTestOne }
 }
-</script>              <style>
+</script>
+<style>
 .pun-title {
   color: #333;
 }
-</style>                  <style>
+</style>
+<style>
 .pun-section {
   background-color: #000;
   color: #fff;
