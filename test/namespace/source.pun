@@ -1,0 +1,43 @@
+<namespace>namespace</namespace>
+
+<component alias="testOne">
+  <template>
+    <h3 class="pun-title">This is pun-loader test 1</h3>
+  </template>
+  <style>
+    .pun-title {
+      color: #333;
+    }
+  </style>
+</component>
+
+<component>
+  <template>
+    <section class="pun-section">
+      <h3 class="pun-title">This is pun-loader test</h3>
+      <p>Funds donated via Patreon go directly to support Evan You's full-time work on Vue.js.</p>
+      <button @click="echo">Click</button>
+    </section>
+  </template>
+  <script>
+    export default {
+      methods: {
+        echo () {
+          console.log('Click event trigger')
+        }
+      }
+    }
+    </script>
+    <style scoped>
+      .pun-title {
+        color: #f00;
+      }
+    </style>
+    <style>
+      .pun-section {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+</component>
+
