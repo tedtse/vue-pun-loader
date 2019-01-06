@@ -12,15 +12,16 @@ glob('test/**/*.pun', (err, files) => {
     throw err
   }
   files.forEach(file => {
-    if (!file.includes('template')) {
+    if (!file.includes('namespace')) {
       return
     }
     let _source = fs.readFileSync(file, 'utf8')
-    let { component } = getComponents(_source)
+    let { component, namespace } = getComponents(_source)
     let source = generateScript(component, {
       punPrefix: 'Pun',
       debug: false,
-      moduleId: 'data-v-7ba5bd90'
+      moduleId: 'data-v-7ba5bd90',
+      namespace
     }, path.resolve(__dirname, '../', file))
     let dirname = path.dirname(file)
     fs.writeFileSync(

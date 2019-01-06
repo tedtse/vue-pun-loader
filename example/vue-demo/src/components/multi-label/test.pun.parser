@@ -1,4 +1,3 @@
-<script>
 import Vue from 'vue'
 const PunComponent = Vue.extend({
   template: `<p>This is comp2</p>`,
@@ -22,4 +21,3 @@ export default {
   },
   components: { PunComponent }
 }
-</script>

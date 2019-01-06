@@ -14,7 +14,7 @@ import Code from '../code/'
 
 export default {
   name: 'Template',
-  extends: Pun,
+  mixins: [Pun],
   components: {
     Code,
     ...Pun.components

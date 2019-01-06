@@ -11,13 +11,10 @@ import Pun from './index.pun'
 
 export default {
   name: 'Style',
-  extends: Pun,
+  mixins: [Pun],
   components: {
     Code,
     ...Pun.components
-  },
-  mounted () {
-    console.log(this.$router.options)
   }
 }
 </script>

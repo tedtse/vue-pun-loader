@@ -1,6 +1,6 @@
 {
   "name": "vue-pun-loader",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

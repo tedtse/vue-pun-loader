@@ -1,7 +1,8 @@
-<script>
 import Vue from 'vue'
 const PunComponent0 = Vue.extend({
-  template: `<section>      <button @click="echo">click me</button>    </section>`,
+  template: `<section>
+      <button @click="echo">click me</button>
+    </section>`,
   data: function() {
     return { msg: 'hello' }
   },
@@ -13,7 +14,9 @@ const PunComponent0 = Vue.extend({
   components: {}
 })
 const PunComponentTest = Vue.extend({
-  template: `<section>      <button @click="echo">click me</button>    </section>`,
+  template: `<section>
+      <button @click="echo">click me</button>
+    </section>`,
   data: function() {
     return { msg: 'hello' }
   },
@@ -51,6 +54,8 @@ export default {
       console.log(this.msg)
     }
   },
-  components: { PunComponent0, PunComponentTest }
+  components: {
+    PunComponent0,
+    PunComponentTest
+  }
 }
-</script>

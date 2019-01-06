@@ -44,10 +44,6 @@ const getNamespace = (labelValue, configValue, resourcePath) => {
   if (defaultNamespace.includes(labelValue)) {
     throw Error('Can not set the default value of namespace')
   }
-  // 如果 .pun 文件中存在 namespace, 覆盖配置中的值
-  if (labelValue) {
-    result = labelValue
-  }
   // 如果最终配置中的 namespace 是 'auto'， 将 namespace 转化为 .pun 文件的文件名
   if (configValue === 'auto') {
     let parser = path.parse(resourcePath)
@@ -56,6 +52,10 @@ const getNamespace = (labelValue, configValue, resourcePath) => {
   // 如果最终配置中的 namespace 是 'none' 或非， 将 namespace 转化为 undefined
   if (configValue === 'none' || !configValue) {
     result = ''
+  }
+  // 如果 .pun 文件中存在 namespace, 覆盖配置中的值
+  if (labelValue) {
+    result = labelValue
   }
   return result
 }
@@ -67,6 +67,18 @@ const getModuleId = (_compiler, resourcePath) => {
 }
 
 module.exports = function (source) {
+  this._compiler.options.module.rules.forEach((item, index) => {
+    console.log(index, item, index)
+  })
+  // console.log(1, this._compilation._buildingModules, 1)
+  // for (let key of this._compilation._buildingModules.keys()) {
+  //   let file = key.resource.split('?')[0]
+  //   let extname = path.extname(file)
+  //   if (extname === '.vue') {
+  //     console.log(key)
+  //     break
+  //   }
+  // }
   let webpackOpts = Object.assign({}, defaultOptions, getOptions(this) || {})
   validateOptions(schema, webpackOpts, 'Vue Pun Loader')
   let { component, namespace } = getComponents(source)
@@ -80,6 +92,5 @@ module.exports = function (source) {
       'utf8'
     )
   }
-  // return `module.exports = ${JSON.stringify(result).replace(/(\\)+/g, '\\')}`
   return result
 }

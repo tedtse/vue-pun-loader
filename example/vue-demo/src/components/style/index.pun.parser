@@ -1,4 +1,4 @@
-<script>
+require('!!vue-style-loader!css-loader?{"sourceMap":true}!../../../../../lib/style/compiler.js?{"labelType":"style","id":"data-v-46311897","scoped":true}!../../../../../lib/select-loader.js?{"labelType":"style","id":"data-v-46311897","scoped":true}!/Users/xiepeng/Documents/front-end/pun-loader/example/vue-demo/src/components/style/index.pun')
 export default {
   data: function() {
     return {
@@ -11,10 +11,3 @@ export default {
   },
   components: {}
 }
-</script>
-<style scoped>
-.style-test {
-  background-color: #5a1c93;
-  color: #fff;
-}
-</style>

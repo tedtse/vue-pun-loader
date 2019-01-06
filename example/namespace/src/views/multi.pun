@@ -1,3 +1,5 @@
+<namespace>multi</namespace>
+
 <component alias="testOne">
   <template>
     <h3 class="pun-title">This is pun-loader test 1</h3>
@@ -25,11 +27,17 @@
         }
       }
     }
-  </script>
-  <style>
-    .pun-section {
-      background-color: #000;
-      color: #fff;
-    }
-  </style>
+    </script>
+    <style scoped>
+      .pun-title {
+        color: #f00;
+      }
+    </style>
+    <style>
+      .pun-section {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
 </component>
+

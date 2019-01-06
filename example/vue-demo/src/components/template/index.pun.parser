@@ -10,7 +10,7 @@ const PunComponent = Vue.extend({
   },
   components: {}
 })
-require('!!vue-style-loader!css-loader?{"sourceMap":true}!../../../../../lib/style/style-compiler.js?{"labelType":"style","id":"data-v-6a8627e0","scoped":true}!../../../../../lib/select-loader.js?{"labelType":"style","id":"data-v-6a8627e0","scoped":true}!/Users/xiepeng/Documents/front-end/pun-loader/example/vue-demo/src/components/template/index.pun')
+require('!!vue-style-loader!css-loader?{"sourceMap":true}!../../../../../lib/style/compiler.js?{"labelType":"style","id":"data-v-6a8627e0","scoped":true}!../../../../../lib/select-loader.js?{"labelType":"style","id":"data-v-6a8627e0","scoped":true}!/Users/xiepeng/Documents/front-end/pun-loader/example/vue-demo/src/components/template/index.pun')
 export default {
   methods: {
     echo() {

@@ -1,12 +1,11 @@
 import Vue from 'vue'
-const msg = 'hello'
-const PunComponent = Vue.extend({
+const PunComponentSingle = Vue.extend({
   template: `<section>
       <button @click="echo">click me</button>
     </section>`,
   methods: {
     echo() {
-      console.log(msg)
+      console.log('click test')
     }
   },
   components: {}
@@ -14,19 +13,19 @@ const PunComponent = Vue.extend({
 export default {
   methods: {
     echo() {
-      console.log(msg)
+      console.log('click test')
     }
   },
   data: function() {
     return {
-      punCode: {
+      punCodeSingle: {
         template:
           '<section>\n      <button @click="echo">click me</button>\n    </section>',
         script:
-          "const msg = 'hello'\n  export default {\n    methods: {\n      echo () {\n        console.log(msg)\n      }\n    }\n  }",
+          "export default {\n      methods: {\n        echo () {\n          console.log('click test')\n        }\n      }\n    }",
         style: ''
       }
     }
   },
-  components: { PunComponent }
+  components: { PunComponentSingle }
 }
